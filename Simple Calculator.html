@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <meta charset="UTF-8">
+        <style type ="text/css">
+            #abc{
+                border: solid 5px;
+                border-radius: 10px;
+                width:350px;
+                height:480px;
+                text-align:center;
+                margin:auto;
+                margin-top: 50px;
+                /* background-color:rgb(248, 240, 229); */
+            }
+            input[type=text]{
+                margin-top: 10px;
+                width:310px;
+                height:70px;
+                border-radius: 10px;
+                font-size:30px;
+                box-shadow: 4px 4px 4px 0px grey;
+                text-align: right;
+            }
+            input[type=button]{
+                border-radius: 10px;
+                margin:5;
+                width:70px;
+                height:70px;
+                margin-top:20px;
+                font-size:30px;
+                transition-duration:0.1s;
+                cursor: pointer;
+                box-shadow:4px 4px 4px rgb(105, 104, 104);
+            }
+            input[type=button]:hover{
+                background-color: rgb(158, 169, 165);
+
+            }
+            #clear{
+                background-color: rgb(176, 170, 170);
+            }
+        </style>
+        <script type="text/javascript">
+            function test(btn){
+                var num=btn.value; // 函数num 等于你点击button的值会出现在inp text框里
+               
+            // 写等号：判断语句：如果=就是计算，不等于就继续写
+               switch (num) {
+                   case "=":  //c 和 = 停止运算
+                   document.getElementById("inp").value = eval(document.getElementById("inp").value)
+                        break;
+                   case "C": 
+                   document.getElementById("inp").value= ""; //c 清空
+                        break;
+                   default: 
+                document.getElementById("inp").value=document.getElementById("inp").value+num
+                 //不是覆盖行为，是添加，框里面的数加上新输入的数字继续运算 +num
+                 break;
+
+               }
+               
+            }
+        </script>
+    </head>
+    <body>
+        <div id="abc">
+            <input type="text" name="" id="inp" value=""></br>
+            <input class="123" type="button" name="" id="btn" value="1" onclick="test(this)" readonly>
+            <input type="button" name="" id="" value="2"onclick="test(this)">
+            <input type="button" name="" id="" value="3"onclick="test(this)">
+            <input type="button" name="" id="symbol" value="+"onclick="test(this)"></br>
+            <input type="button" name="" id="" value="4"onclick="test(this)">
+            <input type="button" name="" id="" value="5"onclick="test(this)">
+            <input type="button" name="" id="" value="6"onclick="test(this)">
+            <input type="button" name="" id="symbol" value="*"onclick="test(this)"></br>
+            <input type="button" name="" id="" value="7"onclick="test(this)">
+            <input type="button" name="" id="" value="8"onclick="test(this)">
+            <input type="button" name="" id="" value="9"onclick="test(this)">
+            <input type="button" name="" id="symbol" value="-"onclick="test(this)"></br>
+            <input type="button" name="" id="clear" value="C"onclick="test(this)">
+            <input type="button" name="" id="" value="0"onclick="test(this)">
+            <input type="button" name="" id="" value="="onclick="test(this)">
+            <input type="button" name="" id="symbol" value="/"onclick="test(this)">
+            
+
+
+        </div>
+    </body>
+</html>
